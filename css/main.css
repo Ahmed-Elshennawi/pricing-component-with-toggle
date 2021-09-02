@@ -1,0 +1,267 @@
+/* Base styles (reset & fonts) */
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    background-color: hsl(240, 78%, 98%);
+    background-image: url("../images/bg-top.svg"),
+        url("../images/bg-bottom.svg");
+    background-repeat: no-repeat;
+    background-position: right top, left bottom;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 995px;
+    margin: auto;
+    text-align: center;
+}
+
+.pricing .pricingTitle {
+    font-size: 30px;
+    color: hsl(233, 13%, 49%);
+}
+
+.pricingToggleBox .toggleBoxText {
+    font-size: 13.5px;
+    letter-spacing: 0.5px;
+    color: hsl(234, 14%, 74%);
+}
+
+.cardBox .boxTitle {
+    font-size: 17.5px;
+    color: hsl(233, 13%, 49%);
+}
+
+.cardBox .boxPrice {
+    font-size: 65px;
+    color: hsl(232, 13%, 33%);
+}
+
+.boxPrice .priceDollar {
+    font-size: 40px;
+}
+
+.cardBox .boxFeature {
+    font-size: 13.5px;
+    color: hsl(233, 13%, 49%);
+}
+
+.cardBox .boxCta {
+    font-size: 11.75px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+}
+
+.cardBox.middleBox .boxTitle,
+.cardBox.middleBox .boxPrice,
+.cardBox.middleBox .boxFeature {
+    color: hsl(0, 0%, 100%);
+}
+
+/* Pricing styling (layout and spacing) */
+.pricing {
+    padding-top: 85px;
+}
+
+.pricing .pricingTitle {
+    margin-bottom: 35px;
+}
+
+.pricingToggleBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.pricingToggleBox .toggleBoxText {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.pricingToggleBox .toggleBoxBtn {
+    width: 50px;
+    height: 27.5px;
+    position: relative;
+    border: none;
+    border-radius: 40px;
+    background-image: linear-gradient(
+        to right,
+        hsl(236, 72%, 79%),
+        hsl(237, 63%, 64%)
+    );
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.pricingToggleBox .toggleBoxBtn:hover {
+    opacity: 0.5;
+}
+
+.pricingToggleBox .toggleBoxBtn::after {
+    content: "";
+    display: block;
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 50%;
+    right: 3.5px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: white;
+}
+
+.pricing .pricingCards {
+    display: grid;
+    grid-template-columns: 1fr 0.95fr 1fr;
+    align-items: center;
+}
+
+.pricingCards .cardBox {
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+        rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.pricingCards .cardBox:nth-of-type(1) {
+    border-radius: 10px 0 0 10px;
+}
+.pricingCards .cardBox:nth-of-type(2) {
+    border-radius: 10px;
+}
+
+.pricingCards .cardBox:nth-of-type(3) {
+    border-radius: 0 10px 10px 0;
+}
+
+.cardBox .boxTitle {
+    margin-bottom: 20px;
+}
+
+.cardBox .boxPrice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22.5px;
+}
+
+.boxPrice .priceDollar {
+    margin-right: 5px;
+}
+
+.cardBox .boxFeature {
+    padding: 16.5px 0;
+    border-top: 0.05px solid hsla(0, 0%, 86%, 0.7);
+}
+
+.cardBox .boxFeature:nth-of-type(4) {
+    border-bottom: 0.05px solid hsla(0, 0%, 86%, 0.7);
+}
+
+.cardBox .boxCta {
+    display: block;
+    margin-top: 30px;
+    padding: 12.5px 0;
+    border-radius: 5px;
+    background-image: linear-gradient(
+        to right,
+        hsl(236, 72%, 79%),
+        hsl(237, 63%, 64%)
+    );
+}
+
+.cardBox .boxCta:hover {
+    outline: 1px solid hsl(232, 13%, 33%);
+    color: hsl(237, 63%, 64%);
+    background-image: none;
+    background-color: transparent;
+}
+
+.pricingCards .cardBox.middleBox {
+    height: 465px;
+    background-image: linear-gradient(
+        to bottom,
+        hsl(236, 72%, 79%),
+        hsl(237, 63%, 64%)
+    );
+}
+
+.cardBox.middleBox .boxTitle {
+    padding-top: 20.5px;
+}
+
+.cardBox.middleBox .boxCta {
+    color: hsl(237, 63%, 64%);
+    background-image: none;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.cardBox.middleBox .boxCta:hover {
+    outline-color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%);
+    background-color: transparent;
+}
+
+/* media queries (Responsive) */
+@media (max-width: 1030px) {
+    body {
+        background-image: url("../images/bg-top.svg");
+        background-position: 135% -45px;
+    }
+
+    .wrapper {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .pricing {
+        padding-top: 60px;
+    }
+
+    .pricing .pricingCards {
+        grid-template-columns: 1fr;
+        row-gap: 35px;
+        padding-bottom: 40px;
+    }
+
+    .pricingCards .cardBox.middleBox {
+        height: auto;
+    }
+
+    .pricingCards .cardBox:nth-of-type(1),
+    .pricingCards .cardBox:nth-of-type(3) {
+        border-radius: 10px;
+    }
+}
+
+/* CSS styles changed by JS */
+.pricingToggleBox .toggleBoxBtn::after {
+    transition: transform 0.1s ease-in-out;
+}
+
+.pricingToggleBox .toggleBoxBtn.checked::after {
+    transform: translate(-22px, -50%);
+}
+
+/* attribution */
+.attribution {
+    margin-top: 22.5px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(237, 63%, 64%);
+    text-decoration: none;
+}
